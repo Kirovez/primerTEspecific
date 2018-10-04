@@ -1,6 +1,7 @@
 from collections import defaultdict
 from Bio import SeqIO
 import numpy as np
+import argparse
 
 class PrimerPair():
     def __init__(self,primerF,primerR,expectedPCR_size):
@@ -195,4 +196,8 @@ class PrimerChecker():
         self.getSinglePCRtab()
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('fmt6blast', help='blast results format 6 table ')
+    parser.add_argument('primers', help='fasta of primers. Note! Two primers must differ in single end letter: "F" for one and "R" for another primer ')
+
     PrimerChecker(r'D:\Downloads\VBYV6YK8014-Alignment.txt', r'D:\PycharmProjects\MossRepeatomArticle\Primers_30.08.18_1.fasta')
