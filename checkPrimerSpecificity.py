@@ -199,5 +199,5 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('fmt6blast', help='blast results format 6 table ')
     parser.add_argument('primers', help='fasta of primers. Note! Two primers must differ in single end letter: "F" for one and "R" for another primer ')
-
-    PrimerChecker(r'D:\Downloads\VBYV6YK8014-Alignment.txt', r'D:\PycharmProjects\MossRepeatomArticle\Primers_30.08.18_1.fasta')
+    pars = parser.parse_args()
+    PrimerChecker(pars.fmt6blast, pars.primers)
